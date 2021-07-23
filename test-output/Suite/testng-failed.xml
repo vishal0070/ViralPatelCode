@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="10">
+  <listeners>
+    <listener class-name="Demo.MatchbookAI.Utility.CustomReporter"/>
+    <listener class-name="Demo.MatchbookAI.Utility.CustomReporterBuildSummary"/>
+  </listeners>
+  <test name="Login(failed)" verbose="10">
+    <classes>
+      <class name="Demo.MatchbookAI.LoginTest">
+        <methods>
+          <include name="postConfigue"/>
+          <include name="login">
+            <parameter name="Module" value="Login"/>
+            <parameter name="Author" value="Viral1"/>
+          </include> <!-- login -->
+          <include name="fetchSuiteConfiguration"/>
+          <include name="fetchSuite"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Demo.MatchbookAI.LoginTest -->
+    </classes>
+  </test> <!-- Login(failed) -->
+</suite> <!-- Failed suite [Suite] -->
