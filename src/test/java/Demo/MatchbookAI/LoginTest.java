@@ -1,11 +1,9 @@
 package Demo.MatchbookAI;
+
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import Demo.MatchbookAI.Init.MasterInit;
-
-
-
 
 
 public class LoginTest extends MasterInit{
@@ -17,12 +15,10 @@ public class LoginTest extends MasterInit{
 	String name = "Viral Patel";
 	String Answer="viral";
 	
-	
 	@Test
 	public void login() throws InterruptedException {
 		
 		logCase("Login");
-		//assignAuthor_Module(AuthorName, ModuleName);
 		logStep(step++,"Open URL : "+testUrl);
 		
 		if(loginVerification.verifyhomepage()) {
@@ -68,5 +64,7 @@ public class LoginTest extends MasterInit{
 		Assert.assertTrue(false);
 	}
 }
+
+
 }
 

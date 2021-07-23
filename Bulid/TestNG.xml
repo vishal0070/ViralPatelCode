@@ -3,19 +3,11 @@
 
 <suite name="Suite" verbose="10" thread-count="1">
 
-	<listeners>
-		<listener class-name="Demo.MatchbookAI.Utility.CustomReporter" />
-		<listener
-			class-name="Demo.MatchbookAI.Utility.CustomReporterBuildSummary" />
-	</listeners>
-
 	<test name="Login">
 		<classes>
 			<class name="Demo.MatchbookAI.LoginTest">
 				<methods>
 					<include name="login">
-						<parameter name="Author" value="Viral1" />
-						<parameter name="Module" value="Login" />
 					</include>
 				</methods>
 			</class>
