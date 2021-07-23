@@ -84,7 +84,7 @@ public class MasterInit {
 
 		try {
 			DesiredCapabilities capability = null;
-			if (targetBrowser == null || targetBrowser.contains("firefox")
+			if (targetBrowser.equalsIgnoreCase("firefox") || targetBrowser.contains("firefox")
 					|| targetBrowser.equalsIgnoreCase("firefox")) {
 				File driverpath = new File("Resource/geckodriver.exe");
 				String path1 = driverpath.getAbsolutePath();
@@ -97,23 +97,6 @@ public class MasterInit {
 				capability.setCapability("marionette", true);
 				driver = new FirefoxDriver(capability);
 			} else if (targetBrowser.contains("chrome") || targetBrowser.equalsIgnoreCase("chrome")) {
-//				capability = DesiredCapabilities.chrome();
-//				File driverpath = new File("Resource/chromedriver.exe");
-//				String path1 = driverpath.getAbsolutePath();
-//				System.setProperty("webdriver.chrome.driver", path1);
-//				final ChromeOptions chromeOptions = new ChromeOptions();
-//				Map<String, Object> prefs = new HashMap<String, Object>();
-//				prefs.put("download.default_directory", new File("DownloadData").getAbsolutePath());
-//				chromeOptions.setExperimentalOption("prefs", prefs);
-//				capability.setBrowserName("chrome");
-//				capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-//				capability.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-//				osName = capability.getPlatform().name();
-//				capability.setJavascriptEnabled(true);
-//				osName = capability.getPlatform().name();
-//				browserVersion = capability.getVersion();
-//				driver = new ChromeDriver(capability);
-				
 				capability = DesiredCapabilities.chrome();
 				File driverpath = new File("Resource/chromedriver.exe");
 				String path1 = driverpath.getAbsolutePath();
@@ -137,7 +120,7 @@ public class MasterInit {
 
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
-			// driver.get(testUrl);
+		    driver.get(testUrl);
 			suiteName = testContext.getSuite().getName();
 
 		} catch (Exception e) {
