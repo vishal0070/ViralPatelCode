@@ -22,7 +22,7 @@ public class LoginTest extends MasterInit{
 	public void login() throws InterruptedException {
 		
 		logCase("Login");
-		assignAuthor_Module(AuthorName, ModuleName);
+		//assignAuthor_Module(AuthorName, ModuleName);
 		logStep(step++,"Open URL : "+testUrl);
 		
 		if(loginVerification.verifyhomepage()) {
